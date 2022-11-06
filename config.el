@@ -106,3 +106,11 @@
 
 
 (setq clojure-align-forms-automatically t)
+
+;; https://discourse.doomemacs.org/t/turn-smartparens-strict-mode-on-for-clojure-mode/2502
+(after! smartparens
+  (add-hook 'clojure-mode-hook #'smartparens-strict-mode))
+
+(map! :map clojure-mode-map
+      "DEL" #'sp-backward-delete-char)
+
