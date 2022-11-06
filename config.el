@@ -114,3 +114,6 @@
 (map! :map clojure-mode-map
       "DEL" #'sp-backward-delete-char)
 
+
+(setq tab-always-indent 'complete)
+
