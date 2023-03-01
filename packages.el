@@ -25,7 +25,6 @@
 ;; If you'd like to disable a package included with Doom, you can do so here
 ;; with the `:disable' property:
 ;(package! builtin-package :disable t)
-
 ;; You can override the recipe of a built in package without having to specify
 ;; all the properties for `:recipe'. These will inherit the rest of its recipe
 ;; from Doom or MELPA/ELPA/Emacsmirror:
@@ -62,3 +61,26 @@
 (package! neil)
 (package! clomacs)
 (package! bash-completion)
+;;(package! yaml-mode)
+(package! cfn-mode)
+(package! aggressive-indent-mode)
+(package! git-link)
+
+
+
+;; Use the latest available packages for Clojure
+;; - cider, clojure-mode
+(unpin! (:lang clojure))
+;;; Clojure Core packages to overide the ones pinned in the module, i guess i should just remove
+;;; them from the init.
+;;; this didn't work
+;; (unpin! clojure-mode )
+;; (unpin! clj-refactor)
+;; (unpin! cider)
+;; (when (modulep! :checkers syntax)
+;;   (unpin! flycheck-clj-kondo))
+
+(package! company-quickhelp)
+(package! posframe)
+(unpin! lsp-treemacs)
+(unpin! lsp-ui)
